@@ -10,5 +10,5 @@ steps:
       - --entry-point=hello_gcs
       - --trigger-http
       - --runtime=python3.10
-    options:
-      logging: CLOUD_LOGGING_ONLY
+options:
+  logging: CLOUD_LOGGING_ONLY
