@@ -5,10 +5,10 @@ steps:
       - functions
       - deploy
       - function-1
-      - --region=us-south1
+      - --region="us-central1"
       - --source=.
       - --entry-point=hello_gcs
-      #- --trigger-http
+      - --trigger-http
       - --runtime=python3.10
 options:
   logging: CLOUD_LOGGING_ONLY
