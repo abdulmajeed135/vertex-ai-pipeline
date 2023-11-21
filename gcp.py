@@ -10,3 +10,4 @@ buckets = client.list_buckets()
 for bucket in buckets:
     print(bucket.name)
     print(bucket.name)
+    print(bucket.name)
