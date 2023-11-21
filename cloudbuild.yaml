@@ -1,14 +1,18 @@
 steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     args:
-      - gcloud
-      - functions
-      - deploy
-      - function-1
-      - --region="us-central1"
-      - --source=.
-      - --entry-point=hello_gcs
-      - --trigger-http
-      - --runtime=python3.10
+      - "gcloud"
+      - "functions"
+      - "deploy"
+      - "function-1"
+      - "--region"
+      - "us-central1"
+      - --source
+      - .
+      - "--entry-point"
+      - "hello_gcs"
+      - "--trigger-http"
+      - "--runtime"
+      - "python3.10"
 options:
   logging: CLOUD_LOGGING_ONLY
