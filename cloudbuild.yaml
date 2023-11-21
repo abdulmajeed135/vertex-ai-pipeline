@@ -5,7 +5,7 @@ steps:
       - functions
       - deploy
       - function-1
-      - --region="us-central1"
+      - --region=us-central1
       - --source=.
       - --entry-point=hello_gcs
       - --trigger-http
