@@ -1,5 +1,11 @@
 steps:
-  - name: "gcr.io/cloud-builders/gcloud"
-    args: ["functions", "deploy", "function-1", "--source=."]
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - gcloud
+      - functions
+      - call
+      - function-1
+      - --region
+      - us-central1
 options:
   logging: CLOUD_LOGGING_ONLY
