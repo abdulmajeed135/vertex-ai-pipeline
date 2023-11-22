@@ -16,6 +16,5 @@ steps:
       - us-central1
       - --data
       - "{}"
-
 options:
   logging: CLOUD_LOGGING_ONLY
