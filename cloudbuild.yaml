@@ -1,21 +1,21 @@
 steps:
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-    args:
-      - gsutil
-      - cp
-      - datasets/cleaned_data_2k_lines.csv
-      - gs://output_buc1
-
   # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   #   args:
-  #     - gcloud
-  #     - functions
-  #     - call
-  #     - function-1
-  #     - --region
-  #     - us-central1
-  #     - --data
-  #     - "{}"
+  #     - gsutil
+  #     - cp
+  #     - datasets/cleaned_data_2k_lines.csv
+  #     - gs://output_buc1
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - gcloud
+      - functions
+      - call
+      - function-1
+      - --region
+      - us-central1
+      - --data
+      - "{}"
 
 options:
   logging: CLOUD_LOGGING_ONLY
