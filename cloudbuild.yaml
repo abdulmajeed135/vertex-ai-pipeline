@@ -1,13 +1,19 @@
 steps:
+  # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+  #   args:
+  #     - gcloud
+  #     - functions
+  #     - call
+  #     - function-1
+  #     - --region
+  #     - us-central1
+  #     - --data
+  #     - "{}"
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
-      - gcloud
-      - functions
-      - call
-      - function-1
-      - --region
-      - us-central1
-      - --data
-      - '{}'
+      - gsutil
+      - cp
+      - cleaned_data_2k_lines.csv
+      - gs://output_buc1
 options:
   logging: CLOUD_LOGGING_ONLY
