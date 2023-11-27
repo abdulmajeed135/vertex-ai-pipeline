@@ -1,11 +1,24 @@
 steps:
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-    entrypoint: "bash"
+  - name: Attach date to filename
+    id: attach-date
     args:
-      - "-c"
+      - bash
+      - -c
       - |
-        DATE=$(date '+%d-%m-%y')
-        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/cleaned_data_${DATE}.csv
+        # Get today's date
+        current_date=$(date +%d-%m-%y)
+
+        # Create new filename with date attached
+        new_filename="cleaned_data_2k_lines_${current_date}.csv"
+        echo "New filename: $new_filename"
+
+  - name: Copy file to GCS
+    id: copy-to-gcs
+    args:
+      - gsutil
+      - cp
+      - "datasets/cleaned_data_2k_lines.csv"
+      - "gs://output_buc1/$new_filename"
 
       # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
       #   args:
