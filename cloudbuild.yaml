@@ -1,5 +1,5 @@
 steps:
-  - name: Attach date to filename
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     id: attach-date
     args:
       - bash
@@ -12,7 +12,7 @@ steps:
         new_filename="cleaned_data_2k_lines_${current_date}.csv"
         echo "New filename: $new_filename"
 
-  - name: Copy file to GCS
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     id: copy-to-gcs
     args:
       - gsutil
