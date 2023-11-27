@@ -10,7 +10,7 @@ steps:
         current_date=$(date +%d-%m-%y)
         time=$(date '+%I-%M%p')
         filename="cleaned_data_${time}_${current_date}.csv"
-        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/${filename}.csv
+        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/${filename}
 
       # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
       #   id: copy-to-gcs
