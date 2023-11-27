@@ -6,6 +6,7 @@ steps:
       - -c
       - |
         # Get today's date
+        export TZ=Asia/Kolkata
         current_date=$(date +%d-%m-%y)
         time=$(date '+%H-%M-%S')
         filename="cleaned_data_${time}_${current_date}.csv"
