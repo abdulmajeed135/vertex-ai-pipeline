@@ -8,17 +8,15 @@ steps:
         # Get today's date
         current_date=$(date +%d-%m-%y)
 
-        # Create new filename with date attached
-        new_filename="cleaned_data_2k_lines_${current_date}.csv"
-        echo "New filename: $new_filename"
+        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/cleaned_data_${current_date}.csv
 
-  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-    id: copy-to-gcs
-    args:
-      - gsutil
-      - cp
-      - "datasets/cleaned_data_2k_lines.csv"
-      - "gs://output_buc1/$new_filename"
+      # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+      #   id: copy-to-gcs
+      #   args:
+      #     - gsutil
+      #     - cp
+      #     - "datasets/cleaned_data_2k_lines.csv"
+      #     - "gs://output_buc1/$new_filename"
 
       # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
       #   args:
