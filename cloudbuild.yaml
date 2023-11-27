@@ -5,7 +5,8 @@ steps:
       - -c
       - |
         DATE=$(date '+%d-%m-%y')
-        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/cleaned_data_2k_lines-${DATE}.csv
+        gsutil cp datasets/cleaned_data_2k_lines.csv gs://output_buc1/cleaned_data_${DATE}.csv
+
       # - name: gcr.io/google.com/cloudsdktool/cloud-sdk
       #   args:
       #     - gsutil
